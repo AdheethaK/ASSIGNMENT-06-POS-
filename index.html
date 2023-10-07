@@ -218,13 +218,23 @@
             <!--customer-->
             <div><h5>CUSTOMER:</h5></div>
             <div>
-                <input class="form-control" type="text" aria-label="default input example">
+                <select class="form-select">
+                    <option value="1">
+                        <p>C001</p>
+                    </option>
+                    <option value="2">
+                        <p>C002</p>
+                    </option>
+                    <option value="3">
+                        <p>C003</p>
+                    </option>
+                </select>
             </div>
 
             <!--items list-->
             <div><h5>MY LIST:</h5></div>
             <div class="mb-3">
-                <input type="email" class="form-control" id="exampleFormControlInput2">
+                <input class="form-control" list="datalistOptions" id="example" placeholder="Type to search...">
             </div>
 
             <!--total-->
@@ -279,5 +289,9 @@
     </div>
 
     <footer></footer>
+
+
+    <script src="lib/jquery.min.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>

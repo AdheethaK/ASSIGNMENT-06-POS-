@@ -84,6 +84,15 @@
     font-size: 20px;
     -webkit-text-fill-color: #384242;
 }
+#order-form>div>select{
+    position: absolute;
+    top: 25%;
+
+    font-family: Oxygen; /*"Inter",sans-serif*/
+    font-weight: 600;
+    font-size: 20px;
+    -webkit-text-fill-color: #384242;
+}
 #order-form>div>h5{
     position: absolute;
     top: 30%;
@@ -106,7 +115,8 @@
     height: 98%;
 
     background-color: lightsalmon;
-    border-radius: 20px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
 
     position: absolute;
     top: 1%;
@@ -115,5 +125,5 @@
 #order-all-table>table{
     font-family: Oxygen; /*"Inter",sans-serif*/
     font-size: 20px;
-    -webkit-text-fill-color: grey;
+    -webkit-text-fill-color: black;
 }
