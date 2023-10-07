@@ -1,0 +1,136 @@
+header{
+    position: absolute;
+    top: 0;
+
+    width: 100%;
+    height: 10%;
+
+    background-color: white;
+}
+#logo{
+    position: absolute;
+    top: 5%;
+    bottom: 0;
+    left: 2%;
+    margin: auto;
+
+    width: fit-content;
+    height: fit-content;
+}
+#web-nav{
+    font-family: "Inter",sans-serif;
+    font-weight: 900;
+    font-size: 1em;
+    -webkit-text-fill-color: grey;
+
+    position: absolute;
+    top: 20%;
+    bottom: 0;
+    right: 20%;
+    margin: auto;
+
+    height: fit-content;
+}
+#web-nav>ul{
+    list-style: none;
+    display: flex;
+    margin: 0;
+}
+#web-nav>ul>li{
+    margin: 0px 8px;
+
+    /*border: rosybrown solid 3px;*/
+    /*border-radius: 30px;*/
+    /*background-color: rosybrown;*/
+    /*-webkit-text-fill-color: saddlebrown;*/
+}
+#web-user-account{
+    position: absolute;
+    top: 35%;
+    bottom: 0;
+    right: 4%;
+    margin: auto;
+
+    width: 230px;
+    height: 55px;
+    background-color: darkslategrey;
+}
+.box:first-child{
+    width: 30px;
+    height: 60px;
+    display: block;
+
+    background-color: lightgray;
+    border-radius: 5px;
+
+    position: absolute;
+    top: 50%;
+    bottom: 0;
+    right: 10%;
+    margin: auto;
+}
+#mob-nav{
+    display: none;
+    font-family: "Inter",sans-serif;
+    font-weight: 900;
+    font-size: 1em;
+    -webkit-text-fill-color: grey;
+}
+#mob-nav>.box{
+    width: 30px;
+    height: 200px;
+
+    background-color: lightgray;
+    border-radius: 5px;
+
+    position: absolute;
+    top: 80px;
+    left: 10px;
+}
+#mob-nav>ul{
+    list-style: none;
+
+    position: absolute;
+    top: 80px;
+    left: 10px;
+}
+#mob-nav>ul>li{
+    margin-left: 10px;
+    margin-bottom: 25px;
+}
+#mob-user-account{
+    display: none;
+    position: absolute;
+    top: 210px;
+    left: 58px;
+
+    width: 230px;
+    height: 60px;
+    background-color: darkslategrey;
+}
+@media all and (max-width: 500px){
+    #mob-nav{
+        display: block;
+    }
+    #mob-user-account{
+        display: block;
+    }
+    #web-nav{
+        display: none;
+    }
+    #web-user-account{
+        display: none;
+    }
+    #logo{
+        left: 60%;
+    }
+}
+@media all and (max-width: 850px){
+    #web-nav{
+        top: 100px;
+        right: 1%;
+    }
+}
+header>.nav-icon{
+   position: absolute;
+}
