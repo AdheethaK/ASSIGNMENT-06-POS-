@@ -13,6 +13,7 @@
 
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/body-customer.css">
+    <link rel="stylesheet" href="css/body-item.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/normalization.css">
 </head>
@@ -40,6 +41,7 @@
         <div id="vertical-line-customer"></div>
         <h1>CUSTOMER</h1>
 
+<!--        customer form-->
         <div id="customer-form">
 
             <!--id-->
@@ -72,6 +74,8 @@
                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
             </div>
         </div>
+
+<!--        customer button panel-->
         <div id="customer-btn-panel">
             <button type="button" class="btn btn-info">NEW ID</button>
             <button type="button" class="btn btn-secondary">SEARCH</button>
@@ -79,6 +83,8 @@
             <button type="button" class="btn btn-warning">UPDATE</button>
             <button type="button" class="btn btn-success">SAVE</button>
         </div>
+
+<!--        customer all table-->
         <div id="customer-all-table">
             <table class="table table-striped">
                 <thead>
@@ -121,7 +127,156 @@
     <div id="item-body">
         <div id="vertical-line-item"></div>
         <h1>ITEM</h1>
+
+<!--        item form-->
+        <div id="item-form">
+
+            <!--code-->
+            <div><h5>CODE:</h5></div>
+            <div>
+                <input class="form-control" type="text" aria-label="default input example">
+            </div>
+
+            <!--name-->
+            <div><h5>NAME:</h5></div>
+            <div>
+                <input class="form-control" type="text" aria-label="default input example">
+            </div>
+
+            <!--quantity-->
+            <div><h5>QUANTITY:</h5></div>
+            <div class="mb-3">
+                <input type="email" class="form-control" id="exampleFormControlInput2">
+            </div>
+
+            <!--price-->
+            <div><h5>PRICE:</h5></div>
+            <div class="mb-3">
+                <input class="form-control" type="text" aria-label="default input example">
+            </div>
+        </div>
+
+<!--        item-button-panel-->
+        <div id="item-btn-panel">
+            <button type="button" class="btn btn-info">NEW ID</button>
+            <button type="button" class="btn btn-secondary">SEARCH</button>
+            <button type="button" class="btn btn-danger">DELETE</button>
+            <button type="button" class="btn btn-warning">UPDATE</button>
+            <button type="button" class="btn btn-success">SAVE</button>
+        </div>
+
+<!--        item-all-table-->
+        <div id="item-all-table">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th scope="col">CODE</th>
+                    <th scope="col">NAME</th>
+                    <th scope="col">QTY</th>
+                    <th scope="col">PRICE</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>
+                    <td>@twitter</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
+
+    <!--    order page-->
+    <div id="order-body">
+        <div id="vertical-line-order"></div>
+        <h1>ORDER</h1>
+
+        <!--        order form-->
+        <div id="order-form">
+
+            <!--id-->
+            <div><h5>ID:</h5></div>
+            <div>
+                <input class="form-control" type="text" aria-label="default input example">
+            </div>
+
+            <!--customer-->
+            <div><h5>CUSTOMER:</h5></div>
+            <div>
+                <input class="form-control" type="text" aria-label="default input example">
+            </div>
+
+            <!--items list-->
+            <div><h5>MY LIST:</h5></div>
+            <div class="mb-3">
+                <input type="email" class="form-control" id="exampleFormControlInput2">
+            </div>
+
+            <!--total-->
+            <div><h5>TOTAL:</h5></div>
+            <div class="mb-3">
+                <input class="form-control" type="text" aria-label="default input example">
+            </div>
+        </div>
+
+        <!--        item-button-panel-->
+        <div id="item-btn-panel">
+            <button type="button" class="btn btn-info">NEW ID</button>
+            <button type="button" class="btn btn-secondary">SEARCH</button>
+            <button type="button" class="btn btn-danger">DELETE</button>
+            <button type="button" class="btn btn-warning">UPDATE</button>
+            <button type="button" class="btn btn-success">SAVE</button>
+        </div>
+
+        <!--        item-all-table-->
+        <div id="item-all-table">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th scope="col">CODE</th>
+                    <th scope="col">NAME</th>
+                    <th scope="col">QTY</th>
+                    <th scope="col">PRICE</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>
+                    <td>@twitter</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
     <footer></footer>
 </body>
 </html>
