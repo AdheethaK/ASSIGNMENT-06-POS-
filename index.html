@@ -9,6 +9,7 @@
     <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet"  type='text/css'>
     <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300&family=Tilt+Prism&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala:wght@100&family=Oxygen:wght@300&family=Tilt+Prism&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/body-customer.css">
@@ -34,13 +35,93 @@
         </div>
     </header>
 
+<!--    customer page-->
     <div id="customer-body">
-        <div id="vertical-line"></div>
+        <div id="vertical-line-customer"></div>
         <h1>CUSTOMER</h1>
+
+        <div id="customer-form">
+
+            <!--id-->
+            <div><h5>ID:</h5></div>
+            <div>
+                <input class="form-control" type="text" aria-label="default input example">
+            </div>
+
+            <!--first name-->
+            <div><h5>FIRST NAME:</h5></div>
+            <div>
+                <input class="form-control" type="text"aria-label="default input example">
+            </div>
+
+            <!--last name-->
+            <div><h5>LAST NAME:</h5></div>
+            <div>
+                <input class="form-control" type="text" aria-label="default input example">
+            </div>
+
+            <!--email-->
+            <div><h5>EMAIL:</h5></div>
+            <div class="mb-3">
+                <input type="email" class="form-control" id="exampleFormControlInput1">
+            </div>
+
+            <!--address-->
+            <div><h5>ADDRESS:</h5></div>
+            <div class="mb-3">
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+        </div>
+        <div id="customer-btn-panel">
+            <button type="button" class="btn btn-info">NEW ID</button>
+            <button type="button" class="btn btn-secondary">SEARCH</button>
+            <button type="button" class="btn btn-danger">DELETE</button>
+            <button type="button" class="btn btn-warning">UPDATE</button>
+            <button type="button" class="btn btn-success">SAVE</button>
+        </div>
+        <div id="customer-all-table">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">First Name</th>
+                    <th scope="col">Last Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Address</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                    <td>Panadura</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                    <td>Panadura</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>
+                    <td>@twitter</td>
+                    <td>Panadura</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
-    <div id="customer-form"></div>
-    <div id="customer-btn-panel"></div>
-    <div id="customer-all-table"></div>
+
+<!--    item page-->
+    <div id="item-body">
+        <div id="vertical-line-item"></div>
+        <h1>ITEM</h1>
+    </div>
     <footer></footer>
 </body>
 </html>

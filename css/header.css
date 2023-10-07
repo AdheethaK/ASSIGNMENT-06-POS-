@@ -56,7 +56,7 @@ header{
     aspect-ratio: 1/1;
     border-radius: 100%;
 
-    background-color: orange;
+    background-color: #D9FB84;
 
     position: absolute;
     top: 0;
@@ -68,7 +68,7 @@ header{
     font-family: "Inter",sans-serif;
     font-weight: 900;
     font-size: 1em;
-    -webkit-text-fill-color: black;
+    -webkit-text-fill-color: #2D3434;
 
     position: absolute;
     left: 30%;
