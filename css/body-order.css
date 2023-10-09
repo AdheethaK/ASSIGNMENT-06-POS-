@@ -93,14 +93,28 @@
     font-size: 20px;
     -webkit-text-fill-color: #384242;
 }
-#order-form>div>h5{
+#order-form>div:nth-child(6){
     position: absolute;
-    top: 30%;
-    right: 10%;
-    -webkit-text-fill-color: grey;
+    top: 48%;
+    left: 1%;
+
+    width: 60px;
+    aspect-ratio: 1/1;
+    background-color: yellow;
+    border-radius: 20px;
+
+    cursor: pointer;
+}
+#order-form>div:nth-child(6)>img{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
 }
 #order-btn-panel{
-    width: 40%;
+    width: 50%;
     height: 6%;
 
     position: absolute;
@@ -108,7 +122,7 @@
     top: 87%;
 }
 #order-btn-panel>button{
-    width: 18%;
+    width: 15%;
 }
 #order-all-table{
     width: 56%;
