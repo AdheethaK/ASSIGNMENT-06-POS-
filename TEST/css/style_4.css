@@ -1,0 +1,26 @@
+p{
+    font-family: Oxygen;
+    font-size: 20px;
+}
+.section_1 > p +p +p{
+    color: red;
+}
+span{
+    width: 100px;
+    aspect-ratio: 1/1;
+
+    position: absolute;
+    border: solid 1px black;
+}
+span:first-of-type{
+    top: 0;
+    right: 0;
+}
+span:nth-of-type(2){
+    top: 150px;
+    right: 0;
+}
+#container > p+ span{
+    background-color: red;
+}
+/*hello*/

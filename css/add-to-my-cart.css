@@ -4,6 +4,8 @@
     z-index: 9999;
     background-color: #F9F958;
     position: absolute;
+
+    display: none;
 }
 #my-cart{
     height: 96%;
@@ -36,6 +38,8 @@
     left: 0.5%;
     top: 15%;
     margin: auto;
+
+    cursor: pointer;
 }
 .add-style-to-back{
     background-color: lightgray;
@@ -122,6 +126,8 @@
     border: none;
     margin: 10px;
     height: 80px;
+
+    cursor: pointer;
 }
 
 .delete{
@@ -212,47 +218,4 @@
     font-family: Oxygen;
     font-size: 1em;
     -webkit-text-fill-color: #7D7D7D;
-}
-#items-list{
-    height: 96%;
-    width: 64.5%;
-    z-index: 9999;
-    background-color: #F9F958;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    margin: auto;
-
-    border-top-left-radius: 25px;
-    border-bottom-left-radius: 25px;
-}
-#items-list-header{
-    position: absolute;
-    top: 0;
-
-    width: 45%;
-    height: 10%;
-    background-color: #F9F958;
-
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-}
-#items-list-header>h3{
-    padding: 5px;
-    background-color: #FFFFFF;
-    width: 40%;
-
-    border-radius: 30px;
-    text-align: center;
-
-    font-family: "Inter",sans-serif;
-    font-weight: 900;
-    font-size: 1.5em;
-    -webkit-text-fill-color: grey;
-
-    display: inline-block;
 }

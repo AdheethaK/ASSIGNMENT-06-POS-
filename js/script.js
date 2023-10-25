@@ -29,6 +29,14 @@ $("#menu>ul>li:nth-child(3)").on('click',() =>{
     $("#menu>ul>li:nth-child(2)").removeClass("add_style_to_li");
     $("#menu>ul>li:nth-child(3)").addClass("add_style_to_li");
 })
+$("#order-form>div:nth-child(6)").on('click',() =>{
+    // ADD TO CART
+    $("#my-cart-overlay").css("display","block")
+})
+$("#back").on('click',() =>{
+    // BACK TO ORDER
+    $("#my-cart-overlay").css("display","none")
+})
 
 
 

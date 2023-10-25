@@ -1,0 +1,41 @@
+*{
+    font-family: Oxygen;
+    font-size: 20px;
+}
+.circle{
+    width: 15px;
+    aspect-ratio: 1/1;
+    border: solid 1px black;
+    display: inline-block;
+    border-radius: 100%;
+}
+.split_triggers{
+    position: absolute;
+    right: 50px;
+    top: 50px;
+    width: 100px;
+    aspect-ratio: 1/1;
+    border: solid 1px black;
+    display: inline-block;
+    border-radius: 100%;
+}
+.split_left{
+    position: absolute;
+    right: 50px;
+    top: 200px;
+    width: 100px;
+    aspect-ratio: 1/1;
+    border: solid 1px black;
+    display: inline-block;
+    border-radius: 100%;
+}
+.split_right{
+    position: absolute;
+    right: 50px;
+    top: 350px;
+    width: 100px;
+    aspect-ratio: 1/1;
+    border: solid 1px black;
+    display: inline-block;
+    border-radius: 100%;
+}
