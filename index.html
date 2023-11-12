@@ -116,35 +116,35 @@
             <!--code-->
             <div><h5>CODE:</h5></div>
             <div>
-                <input class="form-control" type="text" aria-label="default input example">
+                <input class="form-control" type="text" aria-label="default input example" id="input-item-code">
             </div>
 
             <!--name-->
             <div><h5>NAME:</h5></div>
             <div>
-                <input class="form-control" type="text" aria-label="default input example">
+                <input class="form-control" type="text" aria-label="default input example" id="input-item-name">
             </div>
 
             <!--quantity-->
             <div><h5>QUANTITY:</h5></div>
             <div class="mb-3">
-                <input type="email" class="form-control" id="exampleFormControlInput2">
+                <input type="email" class="form-control" id="input-item-qty">
             </div>
 
             <!--price-->
             <div><h5>PRICE:</h5></div>
             <div class="mb-3">
-                <input class="form-control" type="text" aria-label="default input example">
+                <input class="form-control" type="text" aria-label="default input example" id="input-item-price">
             </div>
         </div>
 
 <!--        item-button-panel-->
         <div id="item-btn-panel">
-            <button type="button" class="btn btn-info">NEW ID</button>
-            <button type="button" class="btn btn-secondary">SEARCH</button>
-            <button type="button" class="btn btn-danger">DELETE</button>
-            <button type="button" class="btn btn-warning">UPDATE</button>
-            <button type="button" class="btn btn-success">SAVE</button>
+            <button type="button" class="btn btn-info" id="ITEM-new-id">NEW ID</button>
+            <button type="button" class="btn btn-secondary" id="ITEM-search">SEARCH</button>
+            <button type="button" class="btn btn-danger" id="ITEM-delete">DELETE</button>
+            <button type="button" class="btn btn-warning" id="ITEM-update">UPDATE</button>
+            <button type="button" class="btn btn-success" id="ITEM--save">SAVE</button>
         </div>
 
 <!--        item-all-table-->
@@ -158,26 +158,7 @@
                     <th scope="col">PRICE</th>
                 </tr>
                 </thead>
-                <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>Larry</td>
-                    <td>the Bird</td>
-                    <td>@twitter</td>
-                </tr>
-                </tbody>
+                <tbody id="item-tbl-body"></tbody>
             </table>
         </div>
     </div>
@@ -490,6 +471,7 @@
 
     <script src="assets/lib/jquery.min.js"></script>
     <script type="module" src="controller/CustomerController.js"></script>
+    <script type="module" src="controller/ItemController.js"></script>
     <script src="assets/js/script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

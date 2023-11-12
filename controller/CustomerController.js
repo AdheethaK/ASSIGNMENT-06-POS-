@@ -13,7 +13,6 @@ const clean_input = ()=>{
 }
 
 // ----------2. load customer --------------
-
 const load_customer = ()=>{
     $('#customer-tbl-body').empty();
 
@@ -71,12 +70,191 @@ $('#CUSTOMER-save').on('click',()=>{
                         clean_input();
                         load_customer();
 
-                    }else{toastr.error('Invalid Customer Address');}
-                }else{toastr.error('Invalid Customer Email');}
-            }else{toastr.error('Invalid Customer Last Name');}
-        }else{toastr.error('Invalid Customer First Name');}
-    }else{toastr.error('Invalid Customer ID');}
+                    }else{
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Invalid Input',
+                            text: 'Please enter valid customer address'
+                        })
+                    }
+                }else{
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Invalid Input',
+                        text: 'Please enter valid customer email'
+                    })
+                }
+            }else{
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Invalid Input',
+                    text: 'Please enter valid customer last name'
+                })
+            }
+        }else{
+            Swal.fire({
+                icon: 'error',
+                title: 'Invalid Input',
+                text: 'Please enter valid customer first name'
+            })
+        }
+    }else{
+        Swal.fire({
+            icon: 'error',
+            title: 'Invalid Input',
+            text: 'Please enter valid customer id'
+        })
+    }
 })
 
-// ----------4. fill customer --------------
-// $('#CUSTOMER-search')
+// ----------4. search customer --------------
+$('#CUSTOMER-search').on('click',()=>{
+    let customer_id = $('#input-customer-id').val().toLowerCase();
+
+    if(customer_id){
+        let result = customer_db.filter((item)=> item.customer_id.toLowerCase().includes(customer_id));
+
+        console.log(result)
+
+        if(result.length !=0){
+            result.map((item,index)=>{
+                $('#input-customer-first-name').val(item.customer_first_name);
+                $('#input-customer-last-name').val(item.customer_last_name);
+                $('#input-customer-email').val(item.customer_email);
+                $('#input-customer-address').val(item.customer_address);
+            })
+        }else{
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'Customer id does not exist'
+            })
+        }
+    }else{
+        Swal.fire({
+            icon: 'error',
+            title: 'Invalid Input',
+            text: 'Please enter valid customer id'
+        })
+    }
+})
+
+// ----------4. update customer --------------
+$('#CUSTOMER-update').on('click',()=>{
+    let customer_id = $('#input-customer-id').val();
+    let customer_first_name = $('#input-customer-first-name').val();
+    let customer_last_name = $('#input-customer-last-name').val();
+    let customer_email = $('#input-customer-email').val();
+    let customer_address = $('#input-customer-address').val();
+
+    if(customer_id){
+        if(customer_first_name){
+            if(customer_last_name){
+                let isValid = email_regex.test(customer_email);
+                if(customer_email){
+                    if(customer_address && isValid){
+                        // prepare the object
+                        let customer_obj = new CustomerModel(
+                            customer_id,
+                            customer_first_name,
+                            customer_last_name,
+                            customer_email,
+                            customer_address
+                        );
+
+                        // find item index
+                        let index = customer_db.findIndex((item)=>item.customer_id===customer_id);
+
+                        //update item in db
+                        customer_db[index] = customer_obj;
+
+                        //clear
+                        clean_input();
+
+                        //load customer data
+                        load_customer();
+
+                        Swal.fire(
+                            'Updated!',
+                            'Customer has been updated!',
+                            'success'
+                        )
+                    }else{
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Invalid Input',
+                            text: 'Please enter valid customer address'
+                        })
+                    }
+                }else{
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Invalid Input',
+                        text: 'Please enter valid customer email'
+                    })
+                }
+            }else{
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Invalid Input',
+                    text: 'Please enter valid customer last name'
+                })
+            }
+        }else{
+            Swal.fire({
+                icon: 'error',
+                title: 'Invalid Input',
+                text: 'Please enter valid customer first name'
+            })
+        }
+    }else{
+        Swal.fire({
+            icon: 'error',
+            title: 'Invalid Input',
+            text: 'Please enter valid customer id'
+        })
+    }
+})
+
+// ----------4. delete customer --------------
+$('#CUSTOMER-delete').on('click',()=>{
+
+    let customer_id = $('#input-customer-id').val().toLowerCase();
+
+    if(customer_id){
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result)=>{
+            if (result.isConfirmed){
+                let customer_id = $('#input-customer-id').val();
+
+                //find the item index
+                let index = customer_db.findIndex((item)=>item.customer_id===customer_id);
+
+                //remove the item from the db
+                customer_db.splice(index,1);
+
+                Swal.fire(
+                    'Deleted!',
+                    'Your file has been deleted.',
+                    'success'
+                )
+
+                clean_input();
+                load_customer();
+            }
+        });
+    }else{
+        Swal.fire({
+            icon: 'error',
+            title: 'Invalid Input',
+            text: 'Please enter valid customer id'
+        })
+    }
+})
