@@ -10,20 +10,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300&family=Tilt+Prism&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala:wght@100&family=Oxygen:wght@300&family=Tilt+Prism&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
 
-    <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/body-customer.css">
-    <link rel="stylesheet" href="css/body-item.css">
-    <link rel="stylesheet" href="css/body-order.css">
-    <link rel="stylesheet" href="css/add-to-my-cart.css">
-    <link rel="stylesheet" href="css/items-section.css">
-    <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/normalization.css">
+    <link rel="stylesheet" href="assets/css/header.css">
+    <link rel="stylesheet" href="assets/css/body-customer.css">
+    <link rel="stylesheet" href="assets/css/body-item.css">
+    <link rel="stylesheet" href="assets/css/body-order.css">
+    <link rel="stylesheet" href="assets/css/add-to-my-cart.css">
+    <link rel="stylesheet" href="assets/css/items-section.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+    <link rel="stylesheet" href="assets/css/normalization.css">
 </head>
 <body>
     <header>
         <div id="logo">
-            <img src="img/coffee-house-logo-1.png" alt="coffee-house-log" width="200" height="auto">
+            <img src="assets/img/coffee-house-logo-1.png" alt="coffee-house-log" width="200" height="auto">
         </div>
         <div id="menu">
             <ul>
@@ -50,41 +51,41 @@
             <!--id-->
             <div><h5>ID:</h5></div>
             <div>
-                <input class="form-control" type="text" aria-label="default input example">
+                <input class="form-control" type="text" aria-label="default input example" id="input-customer-id">
             </div>
 
             <!--first name-->
             <div><h5>FIRST NAME:</h5></div>
             <div>
-                <input class="form-control" type="text"aria-label="default input example">
+                <input class="form-control" type="text" aria-label="default input example" id="input-customer-first-name">
             </div>
 
             <!--last name-->
             <div><h5>LAST NAME:</h5></div>
             <div>
-                <input class="form-control" type="text" aria-label="default input example">
+                <input class="form-control" type="text" aria-label="default input example" id="input-customer-last-name">
             </div>
 
             <!--email-->
             <div><h5>EMAIL:</h5></div>
             <div class="mb-3">
-                <input type="email" class="form-control" id="exampleFormControlInput1">
+                <input type="email" class="form-control" id="input-customer-email">
             </div>
 
             <!--address-->
             <div><h5>ADDRESS:</h5></div>
             <div class="mb-3">
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                <textarea class="form-control" rows="3" id="input-customer-address"></textarea>
             </div>
         </div>
 
 <!--        customer button panel-->
         <div id="customer-btn-panel">
-            <button type="button" class="btn btn-info">NEW ID</button>
-            <button type="button" class="btn btn-secondary">SEARCH</button>
-            <button type="button" class="btn btn-danger">DELETE</button>
-            <button type="button" class="btn btn-warning">UPDATE</button>
-            <button type="button" class="btn btn-success">SAVE</button>
+            <button type="button" class="btn btn-info" id="CUSTOMER-new-id">NEW ID</button>
+            <button type="button" class="btn btn-secondary" id="CUSTOMER-search">SEARCH</button>
+            <button type="button" class="btn btn-danger" id="CUSTOMER-delete">DELETE</button>
+            <button type="button" class="btn btn-warning" id="CUSTOMER-update">UPDATE</button>
+            <button type="button" class="btn btn-success" id="CUSTOMER-save">SAVE</button>
         </div>
 
 <!--        customer all table-->
@@ -99,29 +100,7 @@
                     <th scope="col">Address</th>
                 </tr>
                 </thead>
-                <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <td>Panadura</td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                    <td>Panadura</td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>Larry</td>
-                    <td>the Bird</td>
-                    <td>@twitter</td>
-                    <td>Panadura</td>
-                </tr>
-                </tbody>
+                <tbody id="customer-tbl-body"></tbody>
             </table>
         </div>
     </div>
@@ -210,7 +189,7 @@
             <div id="my-cart">
                 <div id="header-my-cart">
                     <div id="back">
-                        <img src="img/previous.png" alt="" width="40px" height="40px">
+                        <img src="assets/img/previous.png" alt="" width="40px" height="40px">
                     </div>
                     <div id="vertical-line-my-cart"></div>
                     <h2>ADD TO CART</h2>
@@ -242,7 +221,7 @@
                             </div>
                             <span class="badge bg-primary rounded-pill">3</span>
                             <div class="delete">
-                                <img src="img/delete%20(2).png" alt="delete-img" width="40px" height="40px">
+                                <img src="assets/img/delete%20(2).png" alt="delete-img" width="40px" height="40px">
                             </div>
                         </li>
                         <li class="list-group-item d-flex justify-content-between align-items-start">
@@ -259,7 +238,7 @@
                             </div>
                             <span class="badge bg-primary rounded-pill">1</span>
                             <div class="delete">
-                                <img src="img/delete%20(2).png" alt="delete-img" width="40px" height="40px">
+                                <img src="assets/img/delete%20(2).png" alt="delete-img" width="40px" height="40px">
                             </div>
                         </li>
                         <li class="list-group-item d-flex justify-content-between align-items-start">
@@ -276,7 +255,7 @@
                             </div>
                             <span class="badge bg-primary rounded-pill">2</span>
                             <div class="delete">
-                                <img src="img/delete%20(2).png" alt="delete-img" width="40px" height="40px">
+                                <img src="assets/img/delete%20(2).png" alt="delete-img" width="40px" height="40px">
                             </div>
                         </li>
                         <li class="list-group-item d-flex justify-content-between align-items-start">
@@ -293,7 +272,7 @@
                             </div>
                             <span class="badge bg-primary rounded-pill">4</span>
                             <div class="delete">
-                                <img src="img/delete%20(2).png" alt="delete-img" width="40px" height="40px">
+                                <img src="assets/img/delete%20(2).png" alt="delete-img" width="40px" height="40px">
                             </div>
                         </li>
                         <li class="list-group-item d-flex justify-content-between align-items-start">
@@ -310,7 +289,7 @@
                             </div>
                             <span class="badge bg-primary rounded-pill">2</span>
                             <div class="delete">
-                                <img src="img/delete%20(2).png" alt="delete-img" width="40px" height="40px">
+                                <img src="assets/img/delete%20(2).png" alt="delete-img" width="40px" height="40px">
                             </div>
                         </li>
                         <li class="list-group-item d-flex justify-content-between align-items-start">
@@ -327,7 +306,7 @@
                             </div>
                             <span class="badge bg-primary rounded-pill">1</span>
                             <div class="delete">
-                                <img src="img/delete%20(2).png" alt="delete-img" width="40px" height="40px">
+                                <img src="assets/img/delete%20(2).png" alt="delete-img" width="40px" height="40px">
                             </div>
                         </li>
                         <li class="list-group-item d-flex justify-content-between align-items-start">
@@ -344,7 +323,7 @@
                             </div>
                             <span class="badge bg-primary rounded-pill">2</span>
                             <div class="delete">
-                                <img src="img/delete%20(2).png" alt="delete-img" width="40px" height="40px">
+                                <img src="assets/img/delete%20(2).png" alt="delete-img" width="40px" height="40px">
                             </div>
                         </li>
                         <li class="list-group-item d-flex justify-content-between align-items-start">
@@ -361,7 +340,7 @@
                             </div>
                             <span class="badge bg-primary rounded-pill" >5</span>
                             <div class="delete">
-                                <img src="img/delete%20(2).png" alt="delete-img" width="40px" height="40px">
+                                <img src="assets/img/delete%20(2).png" alt="delete-img" width="40px" height="40px">
                             </div>
                         </li>
                     </ol>
@@ -451,7 +430,7 @@
             <!--items list-->
             <div><h5>MY LIST:</h5></div>
             <div>
-                <img src="img/add-cart.png" alt="add-cart" width="80%" height="auto">
+                <img src="assets/img/add-cart.png" alt="add-cart" width="80%" height="auto">
             </div>
 
             <!--total-->
@@ -509,7 +488,10 @@
     <footer></footer>
 
 
-    <script src="lib/jquery.min.js"></script>
-    <script src="js/script.js"></script>
+    <script src="assets/lib/jquery.min.js"></script>
+    <script type="module" src="controller/CustomerController.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>
