@@ -1,0 +1,21 @@
+$('#header-coffee').on('click',()=>{
+    $('#items-list-body-donut').css({
+        zIndex:99
+    })
+    $('#items-list-body-coffee').css({
+        zIndex:9999
+    })
+
+    $("#header-food").removeClass("remove-box-shadow").css({opacity:0.5})
+    $("#header-coffee").addClass("add-box-shadow").css({opacity:1})
+})
+$('#header-food').on('click',()=>{
+    $('#items-list-body-coffee').css({
+        zIndex:99
+    })
+    $('#items-list-body-donut').css({
+        zIndex:9999
+    })
+    $("#header-coffee").removeClass("remove-box-shadow").css({opacity:0.5})
+    $("#header-food").addClass("add-box-shadow").css({opacity:1})
+})
