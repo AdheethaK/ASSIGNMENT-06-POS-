@@ -141,3 +141,37 @@
     font-size: 20px;
     -webkit-text-fill-color: black;
 }
+#check-item-type{
+    background-color: transparent;
+
+    width: 300px;
+    height: 50px;
+
+    position: absolute;
+    left: 260px;
+    top: 120px;
+
+    font-family: "Inter",sans-serif;
+    font-weight: 900;
+    font-size: 1.5em;
+    text-transform: uppercase;
+}
+.form-check>label:nth-of-type(1){
+    margin: 10px;
+    -webkit-text-fill-color: firebrick;
+}
+.form-check>label:nth-of-type(2){
+    margin: 10px;
+    -webkit-text-fill-color: cornflowerblue;
+}
+#image-item-type{
+    width: 80px;
+    aspect-ratio: 1/1;
+    background-color: transparent;
+    /*background-image: url("/assets/img/donut.png");*/
+    /*background-size: 100% 100%;*/
+
+    position: absolute;
+    left: 370px;
+    top: 5px;
+}
