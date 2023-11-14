@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>5.TEST</title>
+</head>
+<body>
+
+<select name="myselection" id="myselection-1">
+    <option value="0">One</option>
+    <option value="1">Second</option>
+    <option value="2">Third</option>
+</select>
+
+<button type="submit">submit</button>
+<button type="submit">add</button>
+
+<script src="lib/jquery.min.js"></script>
+<script>
+    $('button:first-of-type').on('click',()=>{
+        let value = $('#myselection-1 option:selected');
+        console.log(value.text());
+    })
+
+    var num_3 = 3;
+    var num_4 = 4;
+    var num_5 = 5;
+    $('button:nth-of-type(2)').on('click',()=>{
+        let option = `<option>Fourth</option>`;
+        option.value = num_3;
+        $('#myselection-1').append(option)
+    })
+</script>
+</body>
+</html>

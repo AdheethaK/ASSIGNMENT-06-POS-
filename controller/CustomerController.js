@@ -16,6 +16,8 @@ const clean_input = ()=>{
 const load_customer = ()=>{
     $('#customer-tbl-body').empty();
 
+    $('#customer-selection').empty();
+
     customer_db.map((item,index)=>{
         let tbl_row = `<tr>
                             <td>${item.customer_id}</td>
@@ -25,7 +27,11 @@ const load_customer = ()=>{
                             <td>${item.customer_address}</td>
                        </tr>`
 
+
         $('#customer-tbl-body').append(tbl_row);
+
+        let option = `<option>${item.customer_id}</option>`;
+        $('#customer-selection').append(option)
     })
 }
 
