@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>6.TEST</title>
+    <style>
+        .box{
+            width: 300px;
+            height: 100px;
+            margin: 10px;
+        }
+        .row:first-of-type>.box{background-color: #3852d0;}
+        .row:nth-of-type(2)>.box{background-color: crimson;}
+        .box > h3{
+            font-family: "Inter",sans-serif;
+            font-weight: 900;
+            font-size: 4.5em;
+            -webkit-text-fill-color: lightgray;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <div class="row">
+        <div class="box"><h3>ONE</h3></div>
+        <div class="box"><h3>TWO</h3></div>
+        <div class="box"><h3>THREE</h3></div>
+    </div>
+    <div class="row">
+        <div class="box"><h3>ONE</h3></div>
+        <div class="box"><h3>TWO</h3></div>
+        <div class="box"><h3>THREE</h3></div>
+        <div class="box"><h3>FOUR</h3></div>
+        <div class="box"><h3>FIVE</h3></div>
+    </div>
+</div>
+<script>
+    const result_1st = document.querySelectorAll('#container .row:nth-of-type(1) .box').length;
+    const result_2nd = document.querySelectorAll('#container .row:nth-of-type(2) .box').length;
+    console.log("1st ROW box no: "+result_1st);
+    console.log("2nd ROW box no: "+result_2nd);
+</script>
+</body>
+</html>

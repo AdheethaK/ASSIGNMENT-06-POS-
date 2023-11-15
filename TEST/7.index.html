@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>7.TEST</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <style>
+        .btn{
+            height: 100px;
+
+            font-family: "Inter",sans-serif;
+            font-weight: 900;
+            font-size: 1.6em;
+            -webkit-text-fill-color: white;
+
+            text-transform: uppercase;
+
+            margin: 5px;
+            position: fixed;
+        }
+        .btn:first-of-type{top: 100px;width: 90px;left: 30px}
+        .btn:nth-of-type(2){top: 250px;width: 150px;}
+        .container{
+            width: 90%;
+            height: 90%;
+            /*background-color: #C9F94D;*/
+
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 130px;
+            right: 0;
+            margin: auto;
+        }
+        .row{
+            display:block;
+            width: 100%;
+            height: 40vh;
+        }
+        .row:first-of-type{background-color: #3852d0}
+        .row:nth-of-type(2){background-color: chocolate}
+        .row:nth-of-type(3){background-color:red}
+        .row:nth-of-type(4){background-color:mediumpurple}
+        .row:nth-of-type(5){background-color:darkolivegreen}
+        .row:nth-of-type(6){background-color:hotpink}
+        .row:nth-of-type(7){background-color: orange}
+        .row:nth-of-type(8){background-color:darkslategray}
+        .row:nth-of-type(9){background-color:#F25050}
+        .row:nth-of-type(10){background-color:darkturquoise}
+        .row:nth-of-type(11){background-color:greenyellow}
+        .row:nth-of-type(12){background-color:black}
+        .row:nth-of-type(13){background-color:darkgoldenrod}
+        .row:nth-of-type(14){background-color:palegreen}
+        .row:nth-of-type(15){background-color:purple}
+        .row:nth-of-type(16){background-color:yellow}
+        .row:nth-of-type(17){background-color:darkblue}
+        .row:nth-of-type(18){background-color:#7D7D7D}
+        .row:nth-of-type(19){background-color:firebrick}
+        .row:nth-of-type(20){background-color:pink}
+
+        .col-sm{
+            width: 30%;
+            height: 80%;
+            margin: 10px;
+
+            border-radius: 20px;
+            background-color: wheat;
+
+            display: inline-flex;
+        }
+        .col-sm>h3{
+            font-family: "Inter",sans-serif;
+            font-weight: 900;
+            font-size: 3em;
+            -webkit-text-fill-color: lightgray;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<button class="btn btn-success" id="btn-add">add row</button>
+<button class="btn btn-warning" id="btn-remove">remove row</button>
+<div class="container">
+    <div class="row">
+        <div class="col-sm"><h3>COL 1</h3></div>
+        <div class="col-sm"><h3>COL 2</h3></div>
+        <div class="col-sm"><h3>COL 3</h3></div>
+    </div>
+    <div class="row">
+        <div class="col-sm"><h3>COL 1</h3></div>
+        <div class="col-sm"><h3>COL 2</h3></div>
+        <div class="col-sm"><h3>COL 3</h3></div>
+    </div>
+    <div class="row">
+        <div class="col-sm"><h3>COL 1</h3></div>
+        <div class="col-sm"><h3>COL 2</h3></div>
+        <div class="col-sm"><h3>COL 3</h3></div>
+    </div>
+    <div class="row">
+        <div class="col-sm"><h3>COL 1</h3></div>
+        <div class="col-sm"><h3>COL 2</h3></div>
+    </div>
+</div>
+
+<script src="lib/jquery.min.js"></script>
+<script>
+    // check the nuber of cols in a row
+    const check_col_no = ()=>{
+        const result = document.querySelectorAll('.container .row:last-of-type div').length;
+        console.log("number of divs in the row : "+result);
+
+        return result;
+    }
+
+    $('#btn-add').on('click',()=>{
+        const number = check_col_no();
+
+        if(number == 3){
+            const row = `<div class="row">
+                                <div class="col-sm">
+                                     <h3>COL 1</h3>
+                                </div>
+                            </div>`
+            $('.container').append(row);
+        } else if (number==2){
+            const col = `<div class="col-sm">
+                                     <h3>COL 3</h3>
+                                </div>`;
+            $('.container>.row:last-of-type').append(col);
+        } else if (number==1){
+            const col = `<div class="col-sm">
+                                     <h3>COL 2</h3>
+                                </div>`;
+            $('.container>.row:last-of-type').append(col);
+        }
+    })
+</script>
+</body>
+</html>

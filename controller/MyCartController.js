@@ -1,8 +1,8 @@
 $('#header-coffee').on('click',()=>{
-    $('#items-list-body-donut').css({
+    $('#all-donut-items').css({
         zIndex:99
     })
-    $('#items-list-body-coffee').css({
+    $('#all-coffee-items').css({
         zIndex:9999
     })
 
@@ -10,10 +10,10 @@ $('#header-coffee').on('click',()=>{
     $("#header-coffee").addClass("add-box-shadow").css({opacity:1})
 })
 $('#header-food').on('click',()=>{
-    $('#items-list-body-coffee').css({
+    $('#all-coffee-items').css({
         zIndex:99
     })
-    $('#items-list-body-donut').css({
+    $('#all-donut-items').css({
         zIndex:9999
     })
     $("#header-coffee").removeClass("remove-box-shadow").css({opacity:0.5})

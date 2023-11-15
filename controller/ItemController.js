@@ -9,13 +9,14 @@ const clean_input = ()=>{
     $('#input-item-price').val('');
 }
 
-// ----------2. load item --------------
+// ----------2.(A) load item --------------
 const load_item = ()=>{
     $('#item-tbl-body').empty();
 
     item_db.map((item,index)=>{
         let tbl_row = `<tr>
                             <td>${item.item_code}</td>
+                            <td>${item.item_type}</td>
                             <td>${item.item_name}</td>
                             <td>${item.item_quantity}</td>
                             <td>${item.item_price}</td>
@@ -25,53 +26,166 @@ const load_item = ()=>{
     })
 }
 
+// ------2.(B) load item to cart  ------
+
+// -------------check if the row is full----------
+const check_col_no_COFFEE = ()=>{
+    const result = document.querySelectorAll('#items-list-body-coffee .row:last-of-type div').length;
+    console.log("number of divs in the row COFFEE: "+result);
+
+    return result;
+}
+const check_col_no_DONUT = ()=>{
+    const result = document.querySelectorAll('#items-list-body-donut .row:last-of-type div').length;
+    console.log("number of divs in the row DONUT: "+result);
+
+    return result;
+}
+
+const load_item_to_item_list = ()=>{
+    $('#all-coffee-items').empty();
+    $('#all-donut-items').empty();
+
+    item_db.map((item,index)=>{
+
+        const type  = item.item_type;
+
+        if(type == "coffee"){
+
+            const number = check_col_no_COFFEE();
+
+            console.log("Number of cols COFFEE: "+number);
+            console.log("Item code COFFEE: "+ item.item_code)
+
+            if(number == 3){
+                const row = `<div class="row">
+                                <div class="col-sm">
+                                     <h3>${item.item_code}</h3>
+                                </div>
+                            </div>`
+                $('#all-coffee-items').append(row);
+            } else if (number==2){
+                const col = `<div class="col-sm">
+                                     <h3>${item.item_code}</h3>
+                                </div>`;
+                $('#all-coffee-items>.row:last-of-type').append(col);
+            } else if (number==1){
+                const col = `<div class="col-sm">
+                                     <h3>${item.item_code}</h3>
+                                </div>`;
+                $('#all-coffee-items>.row:last-of-type').append(col);
+            } else if (number==0){
+                const row = `<div class="row">
+                                <div class="col-sm">
+                                     <h3>${item.item_code}</h3>
+                                </div>
+                            </div>`
+                $('#all-coffee-items').append(row);
+            }else{
+                console.log("does not work : the LOOP")
+            }
+
+        }else if (type == "donut"){
+            const number = check_col_no_DONUT()
+
+            console.log("Number of cols DONUT: "+number);
+            console.log("Item code DONUT: "+ item.item_code)
+
+            if(number == 3){
+                const row = `<div class="row">
+                                <div class="col-sm">
+                                     <h3>${item.item_code}</h3>
+                                </div>
+                            </div>`
+                $('#all-donut-items').append(row);
+            } else if (number==2){
+                const col = `<div class="col-sm">
+                                     <h3>${item.item_code}</h3>
+                                </div>`;
+                $('#all-donut-items>.row:last-of-type').append(col);
+            } else if (number==1){
+                const col = `<div class="col-sm">
+                                     <h3>${item.item_code}</h3>
+                                </div>`;
+                $('#all-donut-items>.row:last-of-type').append(col);
+            } else if (number==0){
+                const row = `<div class="row">
+                                <div class="col-sm">
+                                     <h3>${item.item_code}</h3>
+                                </div>
+                            </div>`
+                $('#all-donut-items').append(row);
+            }else{
+                console.log("does not work : the LOOP")
+            }
+        }
+    })
+}
+
 // ----------3. add item --------------
 $('#ITEM--save').on('click',()=>{
     let item_code = $('#input-item-code').val();
+    let item_type;
+    if($("#coffee-radio").is(":checked")){
+        item_type = "coffee";
+    }else{
+        item_type = "donut";
+    }
     let item_name = $('#input-item-name').val();
     let item_qty = $('#input-item-qty').val();
     let item_price= $('#input-item-price').val();
 
     if(item_code){
-        if(item_name){
-            if(item_qty){
-                if(item_price){
-                    let item = new ItemModel(
-                        item_code,
-                        item_name,
-                        item_qty,
-                        item_price
-                    );
+        if(item_type){
+            if(item_name){
+                if(item_qty){
+                    if(item_price){
+                        let item = new ItemModel(
+                            item_code,
+                            item_type,
+                            item_name,
+                            item_qty,
+                            item_price
+                        );
 
-                    item_db.push(item);
+                        item_db.push(item);
 
-                    Swal.fire(
-                        'Success!',
-                        'Item has been saved successfully!',
-                        'success'
-                    );
+                        Swal.fire(
+                            'Success!',
+                            'Item has been saved successfully!',
+                            'success'
+                        );
 
-                    clean_input();
-                    load_item();
+                        clean_input();
+                        load_item();
+                        load_item_to_item_list();
+                    }else{
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Invalid Input',
+                            text: 'Please enter valid item price'
+                        })
+                    }
                 }else{
                     Swal.fire({
                         icon: 'error',
                         title: 'Invalid Input',
-                        text: 'Please enter valid item price'
+                        text: 'Please enter valid item quantity'
                     })
                 }
             }else{
                 Swal.fire({
                     icon: 'error',
                     title: 'Invalid Input',
-                    text: 'Please enter valid item quantity'
+                    text: 'Please enter valid item name'
                 })
             }
-        }else{
+
+        }else {
             Swal.fire({
                 icon: 'error',
                 title: 'Invalid Input',
-                text: 'Please enter valid item name'
+                text: 'Please enter valid item type'
             })
         }
     }else{
