@@ -63,6 +63,7 @@ const load_item_to_item_list = ()=>{
                                      <h3>${item.item_code}</h3>
                                      <i class="fa-solid fa-plus" style="color: #3df339;"></i>
                                      <div class="image-item"></div>
+                                     <span class="badge bg-success rounded-pill">${item.item_quantity}</span>
                                     <h4>${item.item_price}</h4>
                                     <p>${item.item_name}</p>
                                 </div>
@@ -73,6 +74,7 @@ const load_item_to_item_list = ()=>{
                                      <h3>${item.item_code}</h3>
                                      <i class="fa-solid fa-plus" style="color: #3df339;"></i>
                                      <div class="image-item"></div>
+                                     <span class="badge bg-success rounded-pill">${item.item_quantity}</span>
                                     <h4>${item.item_price}</h4>
                                     <p>${item.item_name}</p>
                                 </div>`;
@@ -83,6 +85,7 @@ const load_item_to_item_list = ()=>{
                                     <h3>${item.item_code}</h3>
                                      <i class="fa-solid fa-plus" style="color: #3df339;"></i>
                                      <div class="image-item"></div>
+                                     <span class="badge bg-success rounded-pill">${item.item_quantity}</span>
                                     <h4>${item.item_price}</h4>
                                     <p>${item.item_name}</p>
                                 </div>`;
@@ -93,6 +96,7 @@ const load_item_to_item_list = ()=>{
                                      <h3>${item.item_code}</h3>
                                      <i class="fa-solid fa-plus" style="color: #3df339;"></i>
                                      <div class="image-item"></div>
+                                     <span class="badge bg-success rounded-pill">${item.item_quantity}</span>
                                     <h4>${item.item_price}</h4>
                                     <p>${item.item_name}</p>
                                 </div>
@@ -114,6 +118,7 @@ const load_item_to_item_list = ()=>{
                                      <h3>${item.item_code}</h3>
                                      <i class="fa-solid fa-plus" style="color: #3df339;"></i>
                                      <div class="image-item"></div>
+                                     <span class="badge bg-success rounded-pill">${item.item_quantity}</span>
                                     <h4>${item.item_price}</h4>
                                     <p>${item.item_name}</p>
                                 </div>
@@ -124,6 +129,7 @@ const load_item_to_item_list = ()=>{
                                      <h3>${item.item_code}</h3>
                                      <i class="fa-solid fa-plus" style="color: #3df339;"></i>
                                      <div class="image-item"></div>
+                                     <span class="badge bg-success rounded-pill">${item.item_quantity}</span>
                                     <h4>${item.item_price}</h4>
                                     <p>${item.item_name}</p>
                                 </div>`;
@@ -132,6 +138,7 @@ const load_item_to_item_list = ()=>{
                 const col = `<div class="col-sm">
                                      <h3>${item.item_code}</h3>
                                      <i class="fa-solid fa-plus" style="color: #3df339;"></i>
+                                     <span class="badge bg-success rounded-pill">${item.item_quantity}</span>
                                      <div class="image-item"></div>
                                     <h4>${item.item_price}</h4>
                                     <p>${item.item_name}</p>
@@ -142,6 +149,7 @@ const load_item_to_item_list = ()=>{
                                 <div class="col-sm">
                                      <h3>${item.item_code}</h3>
                                      <i class="fa-solid fa-plus" style="color: #3df339;"></i>
+                                     <span class="badge bg-success rounded-pill">${item.item_quantity}</span>
                                      <div class="image-item"></div>
                                     <h4>${item.item_price}</h4>
                                     <p>${item.item_name}</p>

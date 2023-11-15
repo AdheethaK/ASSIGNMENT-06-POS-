@@ -54,7 +54,9 @@
     opacity: 0.5;
 }
 #all-coffee-items{
-    background-color: brown;
+    background-color: firebrick;
+
+    border-radius: 20px;
 
     position: absolute;
     top: 10%;
@@ -68,6 +70,8 @@
 }
 #all-donut-items{
     background-color: lightskyblue;
+
+    border-radius: 20px;
 
     position: absolute;
     top: 10%;
@@ -110,6 +114,9 @@
     z-index: 999;
 }
 .col-sm{position: relative;border: 1.5px solid black;}
+.col-sm:hover{
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
 .col-sm>i {
     font-weight: 1400;
     font-size: 2.5em;
@@ -119,6 +126,18 @@
     top: 4%;
 
     cursor: pointer;
+}
+.col-sm>.badge{
+    background-color: purple;
+
+    position: absolute;
+    right: 5%;
+    top: 50%;
+
+    font-family: "Inter",sans-serif;
+    font-weight: 900;
+    font-size: 1em;
+    -webkit-text-fill-color: whitesmoke;
 }
 .col-sm>h4{
     font-family: "Inter",sans-serif;
