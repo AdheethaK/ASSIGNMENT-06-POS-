@@ -90,8 +90,76 @@
     width: 10vh;
     height: 30vh;
 
-    background-color: grey;
+    background-color: white;
     border-radius: 30px;
 
     margin: 5px;
+}
+.col-sm>h3{
+    font-family: "Inter",sans-serif;
+    font-weight: 900;
+    font-size: 1.8em;
+    -webkit-text-fill-color: black;
+
+    text-transform: uppercase;
+
+    position: absolute;
+    top: 5%;
+    left: 30%;
+
+    z-index: 999;
+}
+.col-sm{position: relative;border: 1.5px solid black;}
+.col-sm>i {
+    font-weight: 1400;
+    font-size: 2.5em;
+
+    position: absolute;
+    right: 5%;
+    top: 4%;
+
+    cursor: pointer;
+}
+.col-sm>h4{
+    font-family: "Inter",sans-serif;
+    font-weight: 900;
+    font-size: 1em;
+    -webkit-text-fill-color: blue;
+
+    position: absolute;
+    right: 5%;
+    top: 68%;
+}
+.col-sm>.image-item{
+    width: 45%;
+    aspect-ratio: 1/1;
+    background-color: transparent;
+    border-radius: 25px;
+
+    position: absolute;
+    top: 23%;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+#all-donut-items>.row>.col-sm>.image-item{
+    background-image: url("/assets/img/donut.png");
+    background-size: 100% 100%;
+}
+#all-coffee-items>.row>.col-sm>.image-item{
+    background-image: url("/assets/img/coffee-cup.png");
+    background-size: 100% 100%;
+}
+.col-sm>p{
+    font-family: Oxygen;
+    font-size: 1em;
+    -webkit-text-fill-color: darkslategray;
+
+    text-transform: uppercase;
+
+    position: absolute;
+    top: 75%;
+    left: 10%;
+    right: 10%;
+    bottom: 5%;
 }

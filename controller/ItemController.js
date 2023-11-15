@@ -61,23 +61,40 @@ const load_item_to_item_list = ()=>{
                 const row = `<div class="row">
                                 <div class="col-sm">
                                      <h3>${item.item_code}</h3>
+                                     <i class="fa-solid fa-plus" style="color: #3df339;"></i>
+                                     <div class="image-item"></div>
+                                    <h4>${item.item_price}</h4>
+                                    <p>${item.item_name}</p>
                                 </div>
-                            </div>`
+                             </div>`;
                 $('#all-coffee-items').append(row);
             } else if (number==2){
                 const col = `<div class="col-sm">
                                      <h3>${item.item_code}</h3>
+                                     <i class="fa-solid fa-plus" style="color: #3df339;"></i>
+                                     <div class="image-item"></div>
+                                    <h4>${item.item_price}</h4>
+                                    <p>${item.item_name}</p>
                                 </div>`;
                 $('#all-coffee-items>.row:last-of-type').append(col);
+
             } else if (number==1){
                 const col = `<div class="col-sm">
-                                     <h3>${item.item_code}</h3>
+                                    <h3>${item.item_code}</h3>
+                                     <i class="fa-solid fa-plus" style="color: #3df339;"></i>
+                                     <div class="image-item"></div>
+                                    <h4>${item.item_price}</h4>
+                                    <p>${item.item_name}</p>
                                 </div>`;
                 $('#all-coffee-items>.row:last-of-type').append(col);
             } else if (number==0){
                 const row = `<div class="row">
                                 <div class="col-sm">
                                      <h3>${item.item_code}</h3>
+                                     <i class="fa-solid fa-plus" style="color: #3df339;"></i>
+                                     <div class="image-item"></div>
+                                    <h4>${item.item_price}</h4>
+                                    <p>${item.item_name}</p>
                                 </div>
                             </div>`
                 $('#all-coffee-items').append(row);
@@ -95,23 +112,39 @@ const load_item_to_item_list = ()=>{
                 const row = `<div class="row">
                                 <div class="col-sm">
                                      <h3>${item.item_code}</h3>
+                                     <i class="fa-solid fa-plus" style="color: #3df339;"></i>
+                                     <div class="image-item"></div>
+                                    <h4>${item.item_price}</h4>
+                                    <p>${item.item_name}</p>
                                 </div>
                             </div>`
                 $('#all-donut-items').append(row);
             } else if (number==2){
                 const col = `<div class="col-sm">
                                      <h3>${item.item_code}</h3>
+                                     <i class="fa-solid fa-plus" style="color: #3df339;"></i>
+                                     <div class="image-item"></div>
+                                    <h4>${item.item_price}</h4>
+                                    <p>${item.item_name}</p>
                                 </div>`;
                 $('#all-donut-items>.row:last-of-type').append(col);
             } else if (number==1){
                 const col = `<div class="col-sm">
                                      <h3>${item.item_code}</h3>
+                                     <i class="fa-solid fa-plus" style="color: #3df339;"></i>
+                                     <div class="image-item"></div>
+                                    <h4>${item.item_price}</h4>
+                                    <p>${item.item_name}</p>
                                 </div>`;
                 $('#all-donut-items>.row:last-of-type').append(col);
             } else if (number==0){
                 const row = `<div class="row">
                                 <div class="col-sm">
                                      <h3>${item.item_code}</h3>
+                                     <i class="fa-solid fa-plus" style="color: #3df339;"></i>
+                                     <div class="image-item"></div>
+                                    <h4>${item.item_price}</h4>
+                                    <p>${item.item_name}</p>
                                 </div>
                             </div>`
                 $('#all-donut-items').append(row);
