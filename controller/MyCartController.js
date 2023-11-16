@@ -1,3 +1,5 @@
+import {item_db,cart_db} from "../DB/db.js";
+
 $('#header-coffee').on('click',()=>{
     $('#all-donut-items').css({
         zIndex:99
@@ -19,3 +21,46 @@ $('#header-food').on('click',()=>{
     $("#header-coffee").removeClass("remove-box-shadow").css({opacity:0.5})
     $("#header-food").addClass("add-box-shadow").css({opacity:1})
 })
+
+// -------------1.add item to cart on item click---------------
+$("body").on('click',"#all-coffee-items>.row>.col-sm",()=>{
+
+    const selected_item = event.target.querySelector("h3").innerText;
+
+    // alert("Button is clicked! : "+selected_item);
+
+    item_db.map((item,index)=>{
+        if(item.item_code == selected_item){
+            cart_db.push(item);
+        }
+    })
+    print_cart();
+})
+
+const print_cart = ()=>{
+
+    $('#cart > ol').empty();
+    for (var i = 0; i < cart_db.length; i++) {
+
+        const line = `<li class="list-group-item d-flex justify-content-between align-items-start">
+                            <div class="ms-2 me-auto">
+                                <div class="item-number">
+                                    <p>${i}</p>
+                                </div>
+                                <div class="fw-bold"></div>
+                                <h5>${cart_db[i].item_code}</h5>
+                                <p >${cart_db[i].item_name}</p>
+                            </div>
+                            <div class="price">
+                                <p>${cart_db[i].item_price}</p>
+                            </div>
+                            <span class="badge bg-primary rounded-pill">${1}</span>
+                            <div class="delete">
+                                <img src="/assets/img/delete%20(2).png" alt="delete-img" width="40px" height="40px">
+                            </div>
+                        </li>`;
+
+        console.log(cart_db[i].item_code);
+        $('#cart > ol').append(line);
+    }
+}

@@ -126,10 +126,10 @@
     top: 4%;
 
     cursor: pointer;
+
+    z-index: 9999;
 }
 .col-sm>.badge{
-    background-color: purple;
-
     position: absolute;
     right: 5%;
     top: 50%;
