@@ -1,6 +1,18 @@
 import {customer_db, item_db} from "../DB/db.js";
 import{ItemModel} from "../model/ItemModel.js";
 
+// -------------when you choose the item type -----------
+$('#coffee-radio').on('click',()=>{
+    console.log("works! coffee:)")
+    $('#image-item-type').css("background-image","url(\"/assets/img/coffee-cup.png\")")
+        .css("background-size","100% 100%")
+})
+$('#donut-radio').on('click',()=>{
+    console.log("works! coffee:)")
+    $('#image-item-type').css("background-image","url(\"/assets/img/donut.png\")")
+        .css("background-size","100% 100%")
+})
+
 // ----------1. clean inputs --------------
 const clean_input = ()=>{
     $('#input-item-code').val('');
