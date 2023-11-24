@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>8.TEST</title>
+
+    <link rel="stylesheet" href="css/normalization.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <style>
+        #my-grid{
+            height: 300vh;
+            width: 100%;
+            background-color: black;
+
+            display: grid;
+            grid-template-columns: auto auto auto auto auto auto;
+            grid-template-rows: auto auto auto auto auto auto auto auto auto;
+        }
+        .grid-item{
+            height: 100%;
+            width: 100%;
+            border: 1px solid gray;
+
+            position: relative;
+        }
+        .box{
+            width: 200px;
+            height: 70px;
+
+            text-align: center;
+
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+        }
+        .box > h3{
+            margin: 15px;
+            font-family: "Inter",sans-serif;
+            font-weight: 900;
+            font-size: 2em;
+            -webkit-text-fill-color: lightgray;
+            text-transform: uppercase;
+        }
+
+        /*attention seekers*/
+        #my-grid>.grid-item:nth-of-type(1)>.box{
+            background-color: crimson;
+            animation: bounce infinite;
+            animation-duration: 2s;
+        }
+        #my-grid>.grid-item:nth-of-type(2)>.box{
+            background-color: palegreen;
+            animation: flash infinite;
+            animation-duration: 2s;
+        }
+        #my-grid>.grid-item:nth-of-type(3)>.box{
+            background-color: deeppink;
+            animation: pulse infinite;
+            animation-duration: 2s;
+        }
+        #my-grid>.grid-item:nth-of-type(4)>.box{
+            background-color: royalblue;
+            animation: rubberBand infinite;
+            animation-duration: 2s;
+        }
+        #my-grid>.grid-item:nth-of-type(5)>.box{
+            background-color: orange;
+            animation: shakeX infinite;
+            animation-duration: 2s;
+        }
+        #my-grid>.grid-item:nth-of-type(6)>.box{
+            background-color: palevioletred;
+            animation: shakeY infinite;
+            animation-duration: 2s;
+        }
+        #my-grid>.grid-item:nth-of-type(7)>.box{
+            background-color: darkturquoise;
+            animation: headShake infinite;
+            animation-duration: 2s;
+        }
+        #my-grid>.grid-item:nth-of-type(8)>.box{
+            background-color: blueviolet;
+            animation: swing infinite;
+            animation-duration: 2s;
+        }
+        #my-grid>.grid-item:nth-of-type(9)>.box{
+            background-color: paleturquoise;
+            animation: tada infinite;
+            animation-duration: 2s;
+        }
+        #my-grid>.grid-item:nth-of-type(10)>.box{
+            background-color: mediumvioletred;
+            animation: wobble infinite;
+            animation-duration: 2s;
+        }
+        #my-grid>.grid-item:nth-of-type(11)>.box{
+            background-color: darkolivegreen;
+            animation: jello infinite;
+            animation-duration: 2s;
+        }
+        #my-grid>.grid-item:nth-of-type(12)>.box{
+            background-color: darkkhaki;
+            animation: heartBeat infinite;
+            animation-duration: 2s;
+        }
+
+        /*Back entrances*/
+        #my-grid>.grid-item:nth-of-type(13)>.box{
+            background-color: teal;
+            animation: backInDown infinite;
+            animation-duration: 2s;
+        }
+        #my-grid>.grid-item:nth-of-type(14)>.box{
+            background-color: yellow;
+            animation: backInDown infinite;
+            animation-duration: 2s;
+        }
+        #my-grid>.grid-item:nth-of-type(15)>.box{
+            background-color: springgreen;
+            animation: backInDown infinite;
+            animation-duration: 2s;
+        }
+        #my-grid>.grid-item:nth-of-type(16)>.box{
+            background-color: darkgoldenrod;
+            animation: backInUp infinite;
+            animation-duration: 2s;
+        }
+        /*Back exits*/
+        #my-grid>.grid-item:nth-of-type(17)>.box{
+            background-color: darkmagenta;
+            animation: backOutDown infinite;
+            animation-duration: 2s;
+        }
+        #my-grid>.grid-item:nth-of-type(18)>.box{
+            background-color: orange;
+            animation: backOutLeft infinite;
+            animation-duration: 2s;
+        }
+        #my-grid>.grid-item:nth-of-type(19)>.box{
+            background-color: firebrick;
+            animation: backOutRight infinite;
+            animation-duration: 2s;
+        }
+        #my-grid>.grid-item:nth-of-type(20)>.box{
+            background-color: rebeccapurple;
+            animation: backOutUp infinite;
+            animation-duration: 2s;
+        }
+        /*Bouncing entrances*/
+        #my-grid>.grid-item:nth-of-type(21)>.box{
+            background-color: darkblue;
+            animation: bounceIn infinite;
+            animation-duration: 2s;
+        }
+        #my-grid>.grid-item:nth-of-type(22)>.box{
+            background-color: darkgreen;
+            animation: bounceInDown infinite;
+            animation-duration: 2s;
+        }
+        #my-grid>.grid-item:nth-of-type(23)>.box{
+            background-color: orangered;
+            animation: bounceInLeft infinite;
+            animation-duration: 2s;
+        }
+        #my-grid>.grid-item:nth-of-type(24)>.box{
+            background-color: saddlebrown;
+            animation: bounceInRight infinite;
+            animation-duration: 2s;
+        }
+        #my-grid>.grid-item:nth-of-type(25)>.box{
+            background-color: darkslategray;
+            animation: bounceInUP infinite;
+            animation-duration: 2s;
+        }
+
+        /*Bouncing exits*/
+        #my-grid>.grid-item:nth-of-type(26)>.box{
+            background-color: red;
+            animation: bounceOut infinite;
+            animation-duration: 2s;
+        }
+        #my-grid>.grid-item:nth-of-type(27)>.box{
+            background-color: mediumvioletred;
+            animation: bounceOut infinite;
+            animation-duration: 2s;
+        }
+        #my-grid>.grid-item:nth-of-type(28)>.box{
+            background-color: rebeccapurple;
+            animation: bounceOutLeft infinite;
+            animation-duration: 2s;
+        }
+        #my-grid>.grid-item:nth-of-type(29)>.box{
+            background-color: olive;
+            animation: bounceOutRight infinite;
+            animation-duration: 2s;
+        }
+        #my-grid>.grid-item:nth-of-type(30)>.box{
+            background-color: royalblue;
+            animation: bounceOutUp infinite;
+            animation-duration: 2s;
+        }
+        #my-grid>.grid-item:nth-of-type(31)>.box{
+            background-color: gold;
+        }
+        #my-grid>.grid-item:nth-of-type(32)>.box{
+            background-color: navy;
+        }
+        #my-grid>.grid-item:nth-of-type(33)>.box{
+            background-color: deeppink;
+        }
+        #my-grid>.grid-item:nth-of-type(34)>.box{
+            background-color: saddlebrown;
+        }
+        #my-grid>.grid-item:nth-of-type(35)>.box{
+            background-color: darkturquoise;
+        }
+        #my-grid>.grid-item:nth-of-type(36)>.box{
+            background-color: darkgreen;
+        }
+        #my-grid>.grid-item:nth-of-type(37)>.box{
+            background-color: indigo;
+        }
+        #my-grid>.grid-item:nth-of-type(38)>.box{
+            background-color: darkslategray;
+        }
+        #my-grid>.grid-item:nth-of-type(39)>.box{
+            background-color: firebrick;
+        }
+        #my-grid>.grid-item:nth-of-type(40)>.box{
+            background-color: mediumslateblue;
+        }
+    </style>
+</head>
+<body>
+
+<div id="my-grid">
+    <div class="grid-item"><div class="box"><h3>case 01</h3></div></div>
+    <div class="grid-item"><div class="box"><h3>case 02</h3></div></div>
+    <div class="grid-item"><div class="box"><h3>case 03</h3></div></div>
+    <div class="grid-item"><div class="box"><h3>case 04</h3></div></div>
+    <div class="grid-item"><div class="box"><h3>case 05</h3></div></div>
+    <div class="grid-item"><div class="box"><h3>case 06</h3></div></div>
+    <div class="grid-item"><div class="box"><h3>case 07</h3></div></div>
+    <div class="grid-item"><div class="box"><h3>case 08</h3></div></div>
+    <div class="grid-item"><div class="box"><h3>case 09</h3></div></div>
+    <div class="grid-item"><div class="box"><h3>case 10</h3></div></div>
+    <div class="grid-item"><div class="box"><h3>case 11</h3></div></div>
+    <div class="grid-item"><div class="box"><h3>case 12</h3></div></div>
+    <div class="grid-item"><div class="box"><h3>case 13</h3></div></div>
+    <div class="grid-item"><div class="box"><h3>case 14</h3></div></div>
+    <div class="grid-item"><div class="box"><h3>case 15</h3></div></div>
+    <div class="grid-item"><div class="box"><h3>case 16</h3></div></div>
+    <div class="grid-item"><div class="box"><h3>case 17</h3></div></div>
+    <div class="grid-item"><div class="box"><h3>case 18</h3></div></div>
+    <div class="grid-item"><div class="box"><h3>case 19</h3></div></div>
+    <div class="grid-item"><div class="box"><h3>case 20</h3></div></div>
+    <div class="grid-item"><div class="box"><h3>case 21</h3></div></div>
+    <div class="grid-item"><div class="box"><h3>case 22</h3></div></div>
+    <div class="grid-item"><div class="box"><h3>case 23</h3></div></div>
+    <div class="grid-item"><div class="box"><h3>case 24</h3></div></div>
+    <div class="grid-item"><div class="box"><h3>case 25</h3></div></div>
+    <div class="grid-item"><div class="box"><h3>case 26</h3></div></div>
+    <div class="grid-item"><div class="box"><h3>case 27</h3></div></div>
+    <div class="grid-item"><div class="box"><h3>case 28</h3></div></div>
+    <div class="grid-item"><div class="box"><h3>case 29</h3></div></div>
+    <div class="grid-item"><div class="box"><h3>case 30</h3></div></div>
+    <div class="grid-item"><div class="box"><h3>case 31</h3></div></div>
+    <div class="grid-item"><div class="box"><h3>case 32</h3></div></div>
+    <div class="grid-item"><div class="box"><h3>case 33</h3></div></div>
+    <div class="grid-item"><div class="box"><h3>case 34</h3></div></div>
+    <div class="grid-item"><div class="box"><h3>case 35</h3></div></div>
+    <div class="grid-item"><div class="box"><h3>case 36</h3></div></div>
+</div>
+
+<!--    <div class="box"><h3>animation 1</h3></div>-->
+<!--    <div class="box"><h3>animation 2</h3></div>-->
+<!--    <div class="box"><h3>animation 3</h3></div>-->
+<!--    <div class="box"><h3>animation 4</h3></div>-->
+<!--    <div class="box"><h3>animation 5</h3></div>-->
+</body>
+</html>
