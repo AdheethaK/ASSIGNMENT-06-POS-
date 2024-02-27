@@ -110,7 +110,17 @@
         <div id="vertical-line-item"></div>
         <h1>ITEM</h1>
 
-        <div id="image-item-type"></div>
+        <div id="item-image"></div>
+        <input type="file" id="myFile" name="filename" accept="image/png, image/jpeg">
+        <button class="item-image-btn-edit">
+            <img src="assets/img/edit.png" alt="img-edit">
+        </button>
+        <button class="item-image-btn-save">
+            <img src="assets/img/bookmark.png" alt="img-edit">
+        </button>
+        <button class="item-image-btn-delete">
+            <img src="assets/img/delete.png" alt="img-edit">
+        </button>
 
         <!--item-type-->
         <div id="check-item-type">
@@ -167,6 +177,7 @@
                 <tr>
                     <th scope="col">CODE</th>
                     <th scope="col">TYPE</th>
+                    <th scope="col">IMAGE</th>
                     <th scope="col">NAME</th>
                     <th scope="col">QTY</th>
                     <th scope="col">PRICE</th>
@@ -268,9 +279,9 @@
 
     <script src="assets/lib/jquery.min.js"></script>
     <script type="module" src="controller/CustomerController.js"></script>
-    <script type="module" src="controller/ItemController.js"></script>
-    <script type="module" src="controller/OrderController.js"></script>
-    <script type="module" src="controller/MyCartController.js"></script>
+    <script type="module" src="controller/ItemController_OLD.js"></script>
+<!--    <script type="module" src="controller/OrderController_OLD.js"></script>-->
+<!--    <script type="module" src="controller/MyCartController_OLD.js"></script>-->
     <script src="assets/js/script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

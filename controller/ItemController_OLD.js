@@ -2,21 +2,35 @@ import {customer_db, item_db} from "../DB/db.js";
 import{ItemModel} from "../model/ItemModel.js";
 
 // -------------when you choose the item type -----------
-$('#coffee-radio').on('click',()=>{
-    console.log("works! coffee:)")
-    $('#image-item-type').css("background-image","url(\"/assets/img/coffee-cup.png\")")
-        .css("background-size","100% 100%")
-})
-$('#donut-radio').on('click',()=>{
-    console.log("works! coffee:)")
-    $('#image-item-type').css("background-image","url(\"/assets/img/donut.png\")")
-        .css("background-size","100% 100%")
-})
+// $('#coffee-radio').on('click',()=>{
+//     $('#item-image').css("background-image","url(\"/assets/img/coffee-cup.png\")")
+//         .css("background-size","100% 100%")
+// })
+// $('#donut-radio').on('click',()=>{
+//     $('#item-image').css("background-image","url(\"/assets/img/donut.png\")")
+//         .css("background-size","100% 100%")
+// })
 
+// ------------------ when you click imag edit btn -----------------
+$('.item-image-btn-edit img').on('click',()=>{
+    $('#myFile').click();
+})
+$('input[type=file]').change(function () {
+    var tmppath = URL.createObjectURL(event.target.files[0]);
+    alert("path : "+tmppath);
+    $('#item-image').css("background-image","url("+tmppath+")").css("background-size","100% 100%");
+});
+$('.item-image-btn-save img').on('click',()=>{
+    alert("image save clicked :)")
+})
+$('.item-image-btn-delete img').on('click',()=>{
+    alert("image delete clicked :)")
+})
 // ----------1. clean inputs --------------
 const clean_input = ()=>{
     $('#input-item-code').val('');
     $('#input-item-name').val('');
+    $('#item-image').css("background-image","url()")
     $('#input-item-qty').val('');
     $('#input-item-price').val('');
 }
@@ -184,6 +198,7 @@ $('#ITEM--save').on('click',()=>{
     }else{
         item_type = "donut";
     }
+    let item_image= $('#item-image').css("background-image").replace(/.*\s?url\([\'\"]?/, '').replace(/[\'\"]?\).*/, '');
     let item_name = $('#input-item-name').val();
     let item_qty = $('#input-item-qty').val();
     let item_price= $('#input-item-price').val();
@@ -191,40 +206,74 @@ $('#ITEM--save').on('click',()=>{
     if(item_code){
         if(item_type){
             if(item_name){
-                if(item_qty){
-                    if(item_price){
-                        let item = new ItemModel(
-                            item_code,
-                            item_type,
-                            item_name,
-                            item_qty,
-                            item_price
-                        );
+                if (item_image){
+                    if(item_qty){
+                        if(item_price){
+                            item_image= $('#item-image').css("background-image").replace(/.*\s?url\([\'\"]?/, '').replace(/[\'\"]?\).*/, '');
+                            alert(item_image)
+                            let item = new ItemModel(
+                                item_code,
+                                item_type,
+                                item_image,
+                                item_name,
+                                item_qty,
+                                item_price
+                            );
+                            //javaEE
+                            //create JSON
+                            const itemJSON = JSON.stringify(item);
 
-                        item_db.push(item);
+                            //send data to endpoint via ajax
+                            //AJAX - JQuery
+                            $.ajax({
+                                url:"http://localhost:8080/POS_JavaEE_war_exploded/item",
+                                type:"POST",
+                                data:itemJSON,
+                                headers:{"Content-Type":"application/json"},
+                                success:(resp)=>{
+                                    // get_All_customers_from_server();
+                                    Swal.fire(
+                                        'Success!',
+                                        'Item has been saved successfully!',
+                                        'success'
+                                    );
+                                    clean_input();
+                                },
+                                error: (err) => {
+                                    Swal.fire({
+                                        icon: 'error',
+                                        title: 'Invalid Input',
+                                        text: 'Error in item save ! :('
+                                    })
+                                }
+                            });
 
-                        Swal.fire(
-                            'Success!',
-                            'Item has been saved successfully!',
-                            'success'
-                        );
-
-                        clean_input();
-                        load_item();
-                        load_item_to_item_list();
+                            Swal.fire(
+                                'Success!',
+                                'Item has been saved successfully!',
+                                'success'
+                            );
+                        }else{
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Invalid Input',
+                                text: 'Please enter valid item price'
+                            })
+                        }
                     }else{
                         Swal.fire({
                             icon: 'error',
                             title: 'Invalid Input',
-                            text: 'Please enter valid item price'
+                            text: 'Please enter valid item quantity'
                         })
                     }
                 }else{
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Invalid Input',
-                        text: 'Please enter valid item quantity'
-                    })
+                    if($('#coffee-radio').is(':checked')){
+                            $('#item-image').css("background-image","url(\"/assets/img/coffee-cup.png\")").css("background-size","100% 100%");
+                    }
+                    if($('#donut-radio').is(':checked')){
+                        $('#item-image').css("background-image","url(\"/assets/img/donut.png\")").css("background-size","100% 100%");
+                    }
                 }
             }else{
                 Swal.fire({

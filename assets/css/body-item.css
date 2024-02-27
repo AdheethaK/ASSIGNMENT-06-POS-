@@ -118,3 +118,71 @@
     font-size: 20px;
     -webkit-text-fill-color: black;
 }
+/*------------------------------------------------*/
+.form-check {
+    opacity: 1;
+    position: absolute;
+    left: 120px;
+}
+#item-image{
+    background-color: transparent;
+    height: 120px;
+    width: 120px;
+    position: absolute;
+    top: 10px;
+    left: 280px;
+}
+.item-image-btn-edit{
+    position: absolute;
+    left: 410px;
+    top: 20px;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+
+    height: 35px;
+    width: 35px;
+}
+#myFile{
+    opacity: 0;
+}
+.item-image-btn-edit img{
+    display: block; /* to remove extra space below image */
+    width: 30px;
+    height: 30px;
+}
+.item-image-btn-save{
+    position: absolute;
+    left: 410px;
+    top: 60px;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+
+    height: 35px;
+    width: 35px;
+}
+.item-image-btn-save img{
+    display: block; /* to remove extra space below image */
+    width: 30px;
+    height: 30px;
+}
+.item-image-btn-delete{
+    position: absolute;
+    left: 410px;
+    top: 95px;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+
+    height: 35px;
+    width: 35px;
+}
+.item-image-btn-delete img{
+    display: block; /* to remove extra space below image */
+    width: 30px;
+    height: 30px;
+}

@@ -1,0 +1,141 @@
+.cart{
+    height: 100%;
+    width: 30%;
+    background-color: lightskyblue;
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+.cart > .header {
+    height: 12%;
+    width: 98%;
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 4px;
+    margin: auto;
+
+    background-color: white;
+    border-radius: 5px;
+}
+.cart > .header > .vertical{
+    height: 60px;
+    width: 30px;
+    background-color: lightgrey;
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 6px;
+    margin: auto;
+
+    border-radius: 8px;
+}
+.cart > .header > h3{
+    position: absolute;
+    left: 45px;
+    top: 10px;
+
+    font-family: "Inter",sans-serif;
+    font-weight: 1000;
+    font-size: 4em;
+    -webkit-text-fill-color: lightgray;
+}
+.cart > .footer {
+    height: 12%;
+    width: 98%;
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 4px;
+    margin: auto;
+
+    background-color: white;
+    border-radius: 5px;
+}
+.cart > .footer > h3 {
+    font-family: "Inter",sans-serif;
+    font-weight: 1000;
+    font-size: 2em;
+    -webkit-text-fill-color: red;
+
+    position: relative;
+    left: 10px;
+}
+/*---------ITEMS SECTION---------*/
+.item-section{
+    height: 100%;
+    width: 70%;
+    background-color: yellow;
+
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+
+    display: block;
+
+    overflow-y: scroll;
+}
+.item-section > .item{
+    width: 30%;
+    height: 25%;
+    display: inline-block;
+
+    background-color: white;
+    margin: 15px;
+    border-radius: 15px;
+
+    position: relative;
+}
+.item-section > .item > h3{
+    position: absolute;
+    left: 8%;
+    top: 5%;
+
+    font-family: "Inter",sans-serif;
+    font-weight: 1000;
+    font-size: 3em;
+    -webkit-text-fill-color: black;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+
+    z-index: 99;
+}
+.item-section > .item > .add-item{
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 2em;
+}
+.item-section > .item > h4{
+    position: absolute;
+    right: 10px;
+    top: 65px;
+    -webkit-text-fill-color: #616161;
+    font-size: 1em;
+    font-family: Oxygen;
+}
+.item-section > .item > .item-img{
+    width: 40%;
+    aspect-ratio: 1/1;
+    background-color: #616161;
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 20px;
+    margin: auto;
+}
+.item-section > .item > .bg-success {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    margin: auto;
+}
+/*-------------------------------*/
